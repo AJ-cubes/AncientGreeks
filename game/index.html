@@ -1,33 +1,41 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Greek Quiz Game</title>
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../script.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Greek 20 Questions</title>
+    <link href="../src/css/styles.css" rel="stylesheet">
+    <script defer src="../src/js/game.js"></script>
+    <script src="../src/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/png" href="../src/img/favicon.png">
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar">
-      <div class="logo">🏛️ Ancient Greece</div>
-      <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="../summary/">Summary</a></li>
-        <li><a href="../period/">Historical Period</a></li>
-        <li><a href="../fun/">Fun Facts</a></li>
-      </ul>
+        <div class="logo"><a href="../"><img alt="Icon" aria-label="Icon" src="../src/img/favicon.png" title="Icon"></a> Ancient Greece <small>© Horrible Histories</small></div>
+        <ul class="nav-links" style="user-select: none;">
+            <li><a href="../">Home</a></li>
+            <li><a href="../summary/">Summary</a></li>
+            <li><a href="../period/">Historical Periods</a></li>
+            <li><a href="../fun/">Fun Facts</a></li>
+            <li class="active">Game</li>
+        </ul>
     </nav>
-  </header>
-  <main class="content">
-    <h1>Greek Quiz Game</h1>
-    <p>Answer the questions to test your Ancient Greek knowledge.</p>
-    <div id="quiz" class="quiz-card">
-      <p id="question"></p>
-      <button id="option1"></button>
-      <button id="option2"></button>
-      <button id="option3"></button>
-      <p id="feedback"></p>
+</header>
+<main class="content">
+    <h1>Greek 20 Questions</h1>
+    <p>Answer the questions to test your Ancient Greek knowledge!</p>
+    <div class="quiz-card" id="quiz">
+        <p id="question"></p>
+        <button id="option1"></button>
+        <button id="option2"></button>
+        <button id="option3"></button>
+        <p id="feedback"></p>
+        <canvas id="chart"></canvas>
     </div>
-  </main>
+</main>
+<a class="ad" href="https://www.visitgreece.gr/" target="_blank" rel="noopener noreferrer">
+    <img src="../src/img/ad.gif" alt="Travel to Greece" aria-label="Travel to Greece" title="Travel to Greece">
+</a>
 </body>
 </html>

@@ -1,0 +1,341 @@
+﻿body {
+    font-family: "Comic Sans MS", sans-serif;
+    background: url('../img/background.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3b5998;
+    padding: 1em 2em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 1.5s ease;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px hsl(30, 100%, 75%);
+}
+
+small {
+    color: #cfcfcf;
+    font-size: 0.5em;
+    font-style: italic;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffcc00;
+    transition: width 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links li.active {
+    font-weight: bold;
+    display: inline-flex;
+    position: relative;
+}
+
+.nav-links li.active span {
+    color: #3b5998;
+    display: inline-block;
+    position: relative;
+    --delay: 0s;
+    --underline-delay: 0s;
+    animation: waveColor 1s infinite alternate;
+    animation-delay: var(--delay);
+}
+
+.nav-links li.active span::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    animation: waveUnderline 1s infinite alternate;
+    animation-delay: var(--underline-delay);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #3b5998;
+    animation: bounce 2s infinite;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ffcc00;
+    color: #3b5998;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #ff9900;
+}
+
+.content {
+    padding: 40px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:not(.ad img, .logo img) {
+    height: 115px;
+    border-left: 20px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.zoom-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 9999;
+    box-shadow: 0 4px 12px hsl(30, 100%, 75%) !important;
+}
+
+.ad {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    z-index: 999;
+}
+
+.ad img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    animation: stompIn 1s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.5s ease;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 20px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff9900;
+}
+
+button.correct {
+    background: #4CAF50;
+    color: white;
+}
+
+button.wrong {
+    background: #f44336;
+    color: white;
+}
+
+#feedback {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+@keyframes stompIn {
+    from {
+        transform: scale(7.6);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes waveColor {
+    from {
+        color: #fff;
+    }
+    to {
+        color: #ffcc00;
+    }
+}
+
+@keyframes waveUnderline {
+    from {
+        color: #fff;
+    }
+    to {
+        color: #ffcc00;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

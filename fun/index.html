@@ -1,36 +1,48 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jokes & Fun Facts</title>
-  <link rel="stylesheet" href="../styles.css">
+    <meta charset="UTF-8">
+    <title>Fun Facts</title>
+    <link href="../src/css/styles.css" rel="stylesheet">
+    <script src="../src/js/script.js"></script>
+    <link rel="icon" type="image/png" href="../src/img/favicon.png">
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar">
-      <div class="logo">🏛️ Ancient Greece</div>
-      <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="../summary/">Summary</a></li>
-        <li><a href="../period/">Historical Period</a></li>
-        <li><a href="../game/">Game</a></li>
-      </ul>
+        <div class="logo"><a href="../"><img alt="Icon" aria-label="Icon" src="../src/img/favicon.png" title="Icon"></a> Ancient Greece <small>© Horrible Histories</small></div>
+        <ul class="nav-links" style="user-select: none;">
+            <li><a href="../">Home</a></li>
+            <li><a href="../summary/">Summary</a></li>
+            <li><a href="../period/">Historical Periods</a></li>
+            <li class="active">Fun Facts</li>
+            <li><a href="../game/">Game</a></li>
+        </ul>
     </nav>
-  </header>
-  <main class="content">
+</header>
+<main class="content">
     <h1>Jokes & Fun Facts</h1>
-    <div class="card">
-      <h2>Jokes</h2>
-      <p>Why did the Greek god go to school? To improve his “myth-thematics”!</p>
-    </div>
-    <div class="card">
-      <h2>Fun Facts</h2>
-      <ul>
-        <li>The Olympics started in Ancient Greece over 2,700 years ago.</li>
-        <li>Greek temples were painted in bright colors, not plain white.</li>
-        <li>Spartan kids trained to be warriors from age 7.</li>
-      </ul>
-    </div>
-  </main>
+    <section class="card">
+        <div>
+            <h2>Jokes</h2>
+            <p>Why did the Greek god go to school? To improve his “myth-thematics”!</p>
+        </div>
+        <img src="../src/img/math.png" alt="Pi" aria-label="Pi" title="Pi">
+    </section>
+    <section class="card">
+        <div>
+            <h2>Fun Facts</h2>
+            <ul>
+                <li>The Olympics started in Ancient Greece over 2,700 years ago.</li>
+                <li>Greek temples were painted in bright colors, not plain white.</li>
+                <li>Spartan kids trained to be warriors from age 7.</li>
+            </ul>
+        </div>
+        <img src="../src/img/olympics.png" alt="Olympics in Greece" aria-label="Olympics in Greece" title="Olympics in Greece">
+    </section>
+</main>
+<a class="ad" href="https://www.visitgreece.gr/" target="_blank" rel="noopener noreferrer">
+    <img src="../src/img/ad.gif" alt="Travel to Greece" aria-label="Travel to Greece" title="Travel to Greece">
+</a>
 </body>
 </html>
