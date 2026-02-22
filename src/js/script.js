@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const imgRatio = img.naturalWidth / img.naturalHeight;
                 const viewportRatio = innerWidth / innerHeight;
 
-                if (viewportRatio  <= imgRatio) {
+                if (viewportRatio <= imgRatio) {
                     zoomImg.style.width = "90vw";
                     zoomImg.style.height = `${90 * innerWidth / imgRatio / innerHeight}vh`;
                 } else {
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     zoomImg.addEventListener("transitionend", () => {
                         zoomImg.remove();
-                    }, { once: true });
-                }, { once: true });
+                    }, {once: true});
+                }, {once: true});
             }, 0);
         });
     });

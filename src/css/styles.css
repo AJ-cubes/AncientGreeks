@@ -19,6 +19,15 @@ body::before {
     z-index: -1;
 }
 
+::selection {
+    color: #3b5998;
+    background-color: #ffcc00;
+}
+
+::-moz-selection {
+    color: #3b5998;
+    background-color: #ffcc00;
+}
 
 .navbar {
     display: flex;
@@ -42,6 +51,7 @@ body::before {
     height: 40px;
     vertical-align: middle;
     border-radius: 50%;
+    margin-right: 0.5em;
     transition: all 0.4s ease;
 }
 
@@ -54,6 +64,7 @@ small {
     color: #cfcfcf;
     font-size: 0.5em;
     font-style: italic;
+    user-select: none;
 }
 
 .nav-links {
@@ -167,6 +178,10 @@ small {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+img {
+    user-select: none;
+}
+
 img:not(.ad img, .logo img) {
     height: 115px;
     border-left: 20px;
@@ -199,7 +214,6 @@ img:not(.ad img, .logo img) {
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    user-select: none;
     z-index: 999;
 }
 
