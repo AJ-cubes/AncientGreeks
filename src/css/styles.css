@@ -199,6 +199,7 @@ img:not(.ad img, .logo img) {
     justify-content: flex-end;
     align-items: center;
     margin: 0;
+    user-select: none;
     z-index: 999;
 }
 

@@ -20,7 +20,7 @@
         answer: "Athena"
     },
     {
-        q: "What was the Greek underworld called?",
+        q: "What was the Greek god of the underworld called?",
         options: shuffleArray(["Elysium", "Hades", "Tartarus"]),
         answer: "Hades"
     },
@@ -121,16 +121,17 @@ function loadQuestion() {
         chart.style.display = "block"
         const ctx = chart.getContext("2d")
         const total = questions.length
+        const percentage = ((score / total) * 100).toFixed(0)
         const centerTextPlugin = {
             id: 'centerText',
-            afterDraw(chart) {
+            beforeDraw(chart) {
                 const {ctx, chartArea: {width, height}} = chart;
                 ctx.save();
                 ctx.font = 'bold 32px Comic Sans MS, sans-serif';
                 ctx.fillStyle = 'black';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText(`Score - ${(score / total) * 100}%`, width / 2, height / 2);
+                ctx.fillText(`Score - ${percentage}%`, width / 2, height / 2);
                 ctx.restore();
             }
         };
@@ -140,8 +141,8 @@ function loadQuestion() {
             type: 'doughnut',
             data: {
                 labels: [
-                    `Correct (${(score / total) * 100}%)`,
-                    `Wrong (${((total - score) / total) * 100}%)`
+                    `Correct (${percentage}%)`,
+                    `Wrong (${100 - percentage}%)`
                 ],
                 datasets: [{
                     data: [score, total - score],
