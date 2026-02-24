@@ -50,14 +50,13 @@ body::before {
 .logo img {
     height: 40px;
     vertical-align: middle;
-    border-radius: 50%;
     margin-right: 0.5em;
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
 }
 
 .logo img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px hsl(30, 100%, 75%);
+    transform: rotateY(360deg) scale(1.25);
+    filter: drop-shadow(0px 4px 12px hsl(30, 100%, 75%));
 }
 
 small {
